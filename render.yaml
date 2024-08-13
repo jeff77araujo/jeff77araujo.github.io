@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: project-generation
+    env: docker
+    buildCommand: docker build -t project-generation .
+    startCommand: docker run -p $PORT:8000 project-generation
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_HOSTS
+        value: .onrender.com

@@ -3,7 +3,7 @@ services:
     name: project-generation
     env: docker
     buildCommand: docker build -t project-generation .
-    startCommand: docker run -p $PORT:8000 project-generation
+    startCommand: docker run -p 8000:8000 project-generation
     envVars:
       - key: SECRET_KEY
         generateValue: true
